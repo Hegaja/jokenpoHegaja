@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>JO KEN PO!</title>
+
+
+</head>
+<script>
+
+    function computerPlay() {
+        let myArray = ['rock', 'paper', 'scissors'];
+        return (myArray[Math.floor(Math.random() * myArray.length)]);
+    }
+
+
+    function playerSelection() {
+        let check = 1;
+        while (check == 1) {
+
+            let playerChoose = prompt('Choose your action: ', 'rock');
+            //alert(playerChoose.toLowerCase());
+            if (playerChoose.toLowerCase() == 'rock' || playerChoose.toLowerCase() == 'paper' || playerChoose.toLowerCase() == 'scissors') {
+                return playerChoose.toLowerCase();
+                check = 0;
+                break;
+            } else {
+                alert('wrong move! Choose between: rock, stone or scissors');
+
+            }
+        }
+
+    }
+
+    function playRound(playerSelection, computerSelection) {
+
+        if (playerSelection == 'scissors' && computerSelection == 'rock') {
+            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
+            return 'loose';
+
+        } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
+            return 'won';
+        }
+        else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
+            return 'loose';
+
+        }
+        else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
+            return 'won';
+
+        }
+        else if (playerSelection == 'rock' && computerSelection == 'paper') {
+            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
+            return 'loose';
+
+        }
+        else if (playerSelection == 'paper' && computerSelection == 'rock') {
+            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
+            return 'won';
+
+        }
+        else {
+            alert("Draw game between: " + playerSelection + " and " + computerSelection);
+            return 'drawn';
+        }
+
+    }
+
+    function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+        let i = 0;
+        let round;
+
+        for (i = 0; i < 5; i++) {
+
+            console.log("Round " + (i + 1) + ": ")
+            console.log(round = playRound(playerSelection(), computerPlay()))
+            if (round == 'won') {
+                playerScore++;
+            } else {
+                computerScore++;
+            }
+        }
+        if (playerScore > computerScore) {
+            console.log("YOU WON, CHAMPION!!");
+
+        } else {
+            console.log("tsc tsc tsc... More luck next time!");
+        }
+        console.log("Player: " + playerScore + " vs Computer: " + computerScore);
+    }
+
+
+    console.log(game());
+
+</script>
+
+
+<body>
+    <h2> Draw game = computer's point!</h2>
+
+
+</body>
+
+
+
+
+
+
+</html>
