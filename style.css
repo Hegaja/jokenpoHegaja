@@ -1,0 +1,125 @@
+.header {
+  color: rgb(222, 50, 228);
+  text-align: center;
+}
+.header h1 {
+  border-style: solid;
+  border-color: rgb(243, 25, 232);
+  border-radius: 8px;
+
+  padding: 1% 0 2% 0;
+  margin: 0 5% 0 5%;
+}
+.header:hover + .explanation {
+  display: block;
+}
+body {
+  background: #00ff00;
+}
+.explanation {
+  text-align: justify;
+  margin: 1% 5% 0 5%;
+  padding: 0 1em 0 1em;
+  background: #bbeebbaf;
+
+  font-size: 1.1em;
+  color: blueviolet;
+  font-weight: bold;
+  font-family: Arial;
+
+  border-style: solid;
+  border-color: blueviolet;
+  border-radius: 8px;
+  display: none;
+}
+
+.Paper,
+.Rock,
+.Scissors {
+  border-style: solid;
+  border-color: rgb(243, 25, 232);
+  border-radius: 8px;
+}
+
+/* Explanation of the advantage/disadvantage of that action. */
+.explanationRock,
+.explanationPaper,
+.explanationScissors {
+  display: none;
+  text-align: justify;
+  font-size: 90%;
+}
+
+/* When the user hover the mouse on a icon, it shows the explanation. */
+.Paper:hover + .explanationPaper,
+.Rock:hover + .explanationRock,
+.Scissors:hover + .explanationScissors {
+  display: block;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+}
+img:hover {
+  box-shadow: 0 0 7px 5px rgba(243, 25, 232, 0.5);
+  background: white;
+}
+
+.row {
+  display: flex;
+  /* Some stuff to center the image in the row, #part 1: */
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+  /* #Part 2: */
+  vertical-align: middle;
+}
+
+#footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+
+  text-align: center;
+  background: #039b03;
+  color: rgb(243, 25, 232);
+}
+a {
+  color: #00ff00;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(243, 25, 232);
+}
+
+table,
+td,
+th {
+  text-align: center;
+  border: 2px solid rgb(243, 25, 232);;
+  border-collapse: collapse;
+  color: blueviolet;
+}
+
+table {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  width: 35%
+}
+
+th, td {
+  padding: 2% 5% 2% 5%;
+  
+}

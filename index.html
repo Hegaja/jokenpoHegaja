@@ -4,112 +4,73 @@
 <head>
 
     <title>JO KEN PO!</title>
-
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <script>
-
-    function computerPlay() {
-        let myArray = ['rock', 'paper', 'scissors'];
-        return (myArray[Math.floor(Math.random() * myArray.length)]);
-    }
-
-
-    function playerSelection() {
-        let check = 1;
-        while (check == 1) {
-
-            let playerChoose = prompt('Choose your action: ', 'rock');
-            //alert(playerChoose.toLowerCase());
-            if (playerChoose.toLowerCase() == 'rock' || playerChoose.toLowerCase() == 'paper' || playerChoose.toLowerCase() == 'scissors') {
-                return playerChoose.toLowerCase();
-                check = 0;
-                break;
-            } else {
-                alert('wrong move! Choose between: rock, stone or scissors');
-
-            }
-        }
-
-    }
-
-    function playRound(playerSelection, computerSelection) {
-
-        if (playerSelection == 'scissors' && computerSelection == 'rock') {
-            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
-            return 'loose';
-
-        } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
-            return 'won';
-        }
-        else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
-            return 'loose';
-
-        }
-        else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
-            return 'won';
-
-        }
-        else if (playerSelection == 'rock' && computerSelection == 'paper') {
-            alert("YOU LOSE HAHA! " + playerSelection + " destroyed by computer " + computerSelection);
-            return 'loose';
-
-        }
-        else if (playerSelection == 'paper' && computerSelection == 'rock') {
-            alert("WOW, you won! " + playerSelection + " beats computer " + computerSelection);
-            return 'won';
-
-        }
-        else {
-            alert("Draw game between: " + playerSelection + " and " + computerSelection);
-            return 'drawn';
-        }
-
-    }
-
-    function game() {
-        let playerScore = 0;
-        let computerScore = 0;
-        let i = 0;
-        let round;
-
-        for (i = 0; i < 5; i++) {
-
-            console.log("Round " + (i + 1) + ": ")
-            console.log(round = playRound(playerSelection(), computerPlay()))
-            if (round == 'won') {
-                playerScore++;
-            } else {
-                computerScore++;
-            }
-        }
-        if (playerScore > computerScore) {
-            console.log("YOU WON, CHAMPION!!");
-
-        } else {
-            console.log("tsc tsc tsc... More luck next time!");
-        }
-        console.log("Player: " + playerScore + " vs Computer: " + computerScore);
-    }
-
-
-    console.log(game());
 
 </script>
 
 
 <body>
-    <h2> Draw game = computer's point!</h2>
+    <div class="header">
+        <h1> JO KEN PO </h1>
+    </div>
+    <div class="explanation">
+        <p>Rock-paper-scissors (also known as scissors-paper-rock) is a hand game usually played between two people, in which
+            each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed
+            fist), "paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming
+            a V). "Scissors" is identical to the two-fingered V sign (aka "victory" or "peace sign") except that it is pointed
+            horizontally instead of being held upright in the air. A simultaneous, zero-sum game, it has only two possible
+            outcomes: a draw, or a win for one player and a loss for the other. A player who decides to play rock will beat
+            another player who has chosen scissors ("rock crushes scissors"), but will lose to one who has played paper ("paper
+            covers rock"); a play of paper will lose to a play of scissors ("scissors cuts paper"). If both players choose
+            the same shape, the game is tied and is usually immediately replayed to break the tie.</p>
+    </div>
+
+    <div class="score">
+        <table class="scoreTable">
+            <tr>
+                <th colspan="2"><strong>Score</strong></th>
+            </tr>
+            <tr>
+                <th>Player</th>
+                <th>Computer</th>
+            </tr>
+            <tr>
+                <th>
+                    <p id="playerScore">0</p>
+                </th>
+                <th>
+                    <p id="computerScore">0</p>
+                </th>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <img class="Scissors" src="img/handScissor.png" alt="Scissors">
+            <p class="explanationScissors">Cuts paper but can be destroyed by rock.</p>
+        </div>
+        <div class="column">
+            <img class="Rock" src="img/handRock.png" alt="Rock">
+            <p class="explanationRock">Smashes scissors but can be covered by paper.</p>
+        </div>
+        <div class="column">
+            <img class="Paper" src="img/handPaper.png" alt="Paper">
+            <p class="explanationPaper">Cover rocks but can be shredded by scissors.</p>
+        </div>
+    </div>
 
 
+
+    <div id="footer"> Created by:
+        <a href="http://www.hegaja.com">Hegaja</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
-
-
-
-
 
 </html>
